@@ -14,9 +14,7 @@ Pytorch == 1.8.0+cu101
 # clone this repository
 git clone https://github.com/XU-GITHUB-curry/LETNet_Lightweight-Real-time-Semantic-Segmentation-Network-with-Efficient-Transformer-and-CNN.git
 
-
-
-
+```
 
 ## Train
 
