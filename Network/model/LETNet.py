@@ -3,8 +3,8 @@ import torch.nn as nn
 import torch.nn.functional as F
 from torchsummary import summary
 from IPython import embed
-from model.transformer import TransBlock
-from model.patch import reverse_patches
+from module.transformer import TransBlock
+from module.patch import reverse_patches
 
 __all__ = ["LETNet"]
 
