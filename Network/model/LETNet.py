@@ -88,54 +88,7 @@ class DABModule(nn.Module):
 
         #return output + input
 
-#class DABModule(nn.Module):
-#    def __init__(self, nIn, d=1, kSize=3, dkSize=3):  #
-#        super().__init__()
-        #
-#        self.bn_relu_1 = BNPReLU(nIn)  #
 
-#        self.conv1x1_init = Conv(nIn, nIn // 2, 1, 1, padding=0, bn_acti=True)  #
-#        self.ca0 = eca_layer(nIn // 2)
-#        self.dconv3x1 = Conv(nIn // 2, nIn // 2, (dkSize, 1), 1, padding=(1, 0), groups=nIn // 2, bn_acti=True)
-#        self.dconv1x3 = Conv(nIn // 2, nIn // 2, (1, dkSize), 1, padding=(0, 1), groups=nIn // 2, bn_acti=True)
-
-#        self.dconv1x3_l = Conv(nIn // 2, nIn // 2, (1, dkSize), 1, padding=(0, 1), groups=nIn // 2, bn_acti=True)
-#        self.dconv3x1_l = Conv(nIn // 2, nIn // 2, (dkSize, 1), 1, padding=(1, 0), groups=nIn // 2, bn_acti=True)
-
-#        self.ddconv3x1 = Conv(nIn // 2, nIn // 2, (dkSize, 1), 1, padding=(1 * d, 0), dilation=(d, 1), groups=nIn // 2, bn_acti=True)
-#        self.ddconv1x3 = Conv(nIn // 2, nIn // 2, (1, dkSize), 1, padding=(0, 1 * d), dilation=(1, d), groups=nIn // 2, bn_acti=True)
-#        self.ddconv1x3_r = Conv(nIn // 2, nIn // 2, (1, dkSize), 1, padding=(0, 1 * d), dilation=(1, d), groups=nIn // 2, bn_acti=True)
-#        self.ddconv3x1_r = Conv(nIn // 2, nIn // 2, (dkSize, 1), 1, padding=(1 * d, 0), dilation=(d, 1), groups=nIn // 2, bn_acti=True)
-
-#        self.bn_relu_2 = BNPReLU(nIn // 2)
-#        self.ca11 = eca_layer(nIn // 2)
-#        self.ca22 = eca_layer(nIn // 2)
-#        self.ca = eca_layer(nIn // 2)
-#        self.conv1x1 = Conv(nIn // 2, nIn, 1, 1, padding=0, bn_acti=False)
-#        self.shuffle_end = ShuffleBlock(groups=nIn // 2)
-
-#    def forward(self, input):
-#        output = self.bn_relu_1(input)
-#        output = self.conv1x1_init(output)
-
-#        br1 = self.dconv3x1(output)
-#        br1 = self.dconv1x3(br1)
-#        b1 = self.ca11(br1)
-
-
-#        br2 = self.ddconv3x1(output)
-#        br2 = self.ddconv1x3(br2)
-#        b2 = self.ca22(br2)
-
-
-#        output = self.ca0(output)+ b1 + b2
-
-#        output = self.bn_relu_2(output)
-
-#        output = self.conv1x1(output)
-#        output = self.ca(output)
-#        out = self.shuffle_end(output + input)
-#        return out
 
 class ShuffleBlock(nn.Module):
     def __init__(self, groups):
