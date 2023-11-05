@@ -68,3 +68,14 @@ If you find this project useful for your research, please cite our paper:
   publisher={IEEE}
 }
 ```
+## Thanks && Refer
+
+@misc{Efficient-Segmentation-Networks,
+  author = {Yu Wang},
+  title = {Efficient-Segmentation-Networks Pytorch Implementation},
+  year = {2019},
+  publisher = {GitHub},
+  journal = {GitHub repository},
+  howpublished = {\url{https://github.com/xiaoyufenfei/Efficient-Segmentation-Networks}},
+  commit = {master}
+}
