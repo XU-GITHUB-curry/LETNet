@@ -70,6 +70,7 @@ If you find this project useful for your research, please cite our paper:
 ```
 ## Thanks && Refer
 
+```bash
 @misc{Efficient-Segmentation-Networks,
   author = {Yu Wang},
   title = {Efficient-Segmentation-Networks Pytorch Implementation},
@@ -79,3 +80,4 @@ If you find this project useful for your research, please cite our paper:
   howpublished = {\url{https://github.com/xiaoyufenfei/Efficient-Segmentation-Networks}},
   commit = {master}
 }
+```
