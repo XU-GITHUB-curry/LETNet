@@ -44,23 +44,23 @@ class BNPReLU(nn.Module):
 class DABModule(nn.Module):
     def __init__(self, nIn, d=1, kSize=3, dkSize=3): 
         super().__init__()
-#定义每一个卷积层
+
         self.bn_relu_1 = BNPReLU(nIn)  
-#nIn, nOut, kSize, stride, padding, dilation=(1, 1), groups=1, bn_acti=False, bias=False
+
         self.conv3x3 = Conv(nIn, nIn // 2, kSize, 1, padding=1, bn_acti=True) 
-#2 x depth-wise convolution
+
         self.dconv3x1 = Conv(nIn // 2, nIn // 2, (dkSize, 1), 1,
                              padding=(1, 0), groups=nIn // 2, bn_acti=True)
         self.dconv1x3 = Conv(nIn // 2, nIn // 2, (1, dkSize), 1,
                              padding=(0, 1), groups=nIn // 2, bn_acti=True)
-#2 x depth-wise convolution (dilated convolution)
+
         self.ddconv3x1 = Conv(nIn // 2, nIn // 2, (dkSize, 1), 1,
                               padding=(1 * d, 0), dilation=(d, 1), groups=nIn // 2, bn_acti=True)
         self.ddconv1x3 = Conv(nIn // 2, nIn // 2, (1, dkSize), 1,
                               padding=(0, 1 * d), dilation=(1, d), groups=nIn // 2, bn_acti=True)
 
         self.bn_relu_2 = BNPReLU(nIn // 2)
-# point-wise convolution 
+
         self.conv1x1 = Conv(nIn // 2, nIn, 1, 1, padding=0, bn_acti=False)
 
     def forward(self, input):
