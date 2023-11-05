@@ -81,5 +81,5 @@ If you find this project useful for your research, please cite our paper:
   commit = {master}
 }
 ```
-(https://github.com/xiaoyufenfei/Efficient-Segmentation-Networks)
+For more code about lightweight real-time semantic segmentation, please refer to: https://github.com/xiaoyufenfei/Efficient-Segmentation-Networks
 
