@@ -6,7 +6,7 @@ from IPython import embed
 from model.transformer import TransBlock
 from model.patch import reverse_patches
 
-__all__ = ["DABNet"]
+__all__ = ["LETNet"]
 
 
 class Conv(nn.Module):
@@ -333,7 +333,7 @@ class LongConnection(nn.Module):
         return output
                  
 
-class DABNet(nn.Module):
+class LETNet(nn.Module):
     def __init__(self, classes=19, block_1=3, block_2=12, block_3=12, block_4=3, block_5 = 3, block_6 = 3):
         super().__init__()
         self.init_conv = nn.Sequential(
@@ -478,6 +478,6 @@ class DABNet(nn.Module):
 """print layers and params of network"""
 if __name__ == '__main__':
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-    model = DABNet(classes=19).to(device)
+    model = LETNet(classes=19).to(device)
     summary(model, (3, 512, 1024))
 
