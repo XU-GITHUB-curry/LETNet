@@ -19,7 +19,7 @@
 |   DABNet   |    ✓    |          |          |           |
 |   FSSNet   |    ✓    |          |          |           |
 |   FPENet   |    ✓    |          |          |           |
-|            |         |          |          |           |
+|   LETNet   |    ✓    |          |          |           |
 
 
 
